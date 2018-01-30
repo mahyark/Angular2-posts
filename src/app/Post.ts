@@ -1,8 +1,8 @@
 export class Post {
 
-   constructor (public UserID: number, public ID: number, public Title: string, public Body: string) {}
+   constructor (public userID: number, public id: number, public title: string, public body: string) {}
 
    toForm(): string {
-      return `UserID=${this.UserID}&ID=${this.ID}&Title=${this.Title}&Body=${this.Body}`;
+      return `UserID=${this.userID}&ID=${this.id}&Title=${this.title}&Body=${this.body}`;
    }
 }
