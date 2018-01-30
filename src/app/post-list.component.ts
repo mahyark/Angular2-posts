@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { PostService } from './post.service';
 
 @Component({
    selector: 'post-list',
