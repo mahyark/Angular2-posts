@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-
 import { Comment } from './comment';
+import { PostListComponent } from './post-list.component';
+
 
 @Component({
    selector: 'my-app',
