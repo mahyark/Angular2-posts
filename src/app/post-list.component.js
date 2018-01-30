@@ -18,10 +18,13 @@ var PostListComponent = (function () {
     PostListComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.postService.getAllPosts().subscribe(function (data) { return _this.posts = data; });
+        this.comments = [];
     };
     PostListComponent.prototype.getComments = function (index) {
         var _this = this;
-        this.postService.getCommentsForPost(index).subscribe(function (data) { return _this.comments = data; });
+        var id = index + 1;
+        this.postService.getCommentsForPost(id).subscribe(function (data) { return _this.comments = data; });
+        this.printComments(this.comments);
     };
     PostListComponent.prototype.printComments = function (comments) {
         for (var i = comments.length - 1; i >= 0; i--) {

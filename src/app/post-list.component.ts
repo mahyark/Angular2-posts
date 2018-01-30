@@ -18,10 +18,13 @@ export class PostListComponent  {
 
    ngOnInit(): void {
       this.postService.getAllPosts().subscribe(data => this.posts = data);
+      this.comments = [];
    }
 
    getComments(index: number): void {
-   	this.postService.getCommentsForPost(index).subscribe(data => this.comments = data);
+      var id = index + 1;
+   	this.postService.getCommentsForPost(id).subscribe(data => this.comments = data);
+      this.printComments(this.comments);
    }
 
    printComments(comments: Comment[]): void {
